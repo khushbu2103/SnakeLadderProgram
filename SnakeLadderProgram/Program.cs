@@ -19,8 +19,13 @@ namespace SnakeLadderProgram
 
             int position = 0; // player's starting position
             int numberOfRolls = 0; // number of times the dice was rolled
-           
-            }
+
+            Random random = new Random();
+            numberOfRolls=random.Next(1, 6);
+            numberOfRolls++;
+            Console.WriteLine("dice of player rolled:{0}", numberOfRolls);
+            Console.ReadLine();
+        }
         }
 
     }
