@@ -17,13 +17,33 @@ namespace SnakeLadderProgram
             Console.WriteLine("Press anything to start");
             Console.ReadLine();
 
-            int position = 0; // player's starting position
-            int numberOfRolls = 0; // number of times the dice was rolled
+            int Pl1_position = 0; // player's starting position
+            int Pl1_numberOfRolls = 0; // number of times the dice was rolled
 
             Random random = new Random();
-            numberOfRolls=random.Next(1, 6);
-            numberOfRolls++;
-            Console.WriteLine("dice of player rolled:{0}", numberOfRolls);
+            int Pl1_DiceRolls=random.Next(1, 7);
+            Pl1_numberOfRolls++;
+            Console.WriteLine("dice for player rolled:{0}", +Pl1_DiceRolls);
+           // Console.ReadLine();
+
+            int Pl1_Option = random.Next(0, 3);
+            switch (Pl1_Option)
+            {
+                case 0:
+                    Console.WriteLine("No play");
+
+                    break;
+                case 1:
+                    Pl1_position += Pl1_DiceRolls;
+                    Console.WriteLine("ladder");
+                    break;
+                case 2:
+                    Pl1_position -= Pl1_DiceRolls;
+                    Console.WriteLine("snake");
+                    break;
+
+            }
+            Console.WriteLine("The position for Player 1 is : " + Pl1_position);
             Console.ReadLine();
         }
         }
