@@ -21,33 +21,37 @@ namespace SnakeLadderProgram
             int Pl1_numberOfRolls = 0; // number of times the dice was rolled
 
             Random random = new Random();
-            int Pl1_DiceRolls=random.Next(1, 7);
-            Pl1_numberOfRolls++;
-            Console.WriteLine("dice for player rolled:{0}", +Pl1_DiceRolls);
-           // Console.ReadLine();
-
-            int Pl1_Option = random.Next(0, 3);
-            switch (Pl1_Option)
+            while (Pl1_position < 100)
             {
-                case 0:
-                    Console.WriteLine("No play");
+                int Pl1_diceRoll = random.Next(1, 7);
+                Pl1_numberOfRolls++;
 
-                    break;
-                case 1:
-                    Pl1_position += Pl1_DiceRolls;
-                    Console.WriteLine("ladder");
-                    break;
-                case 2:
-                    Pl1_position -= Pl1_DiceRolls;
-                    Console.WriteLine("snake");
-                    break;
+                Console.WriteLine("Dice for Player 1 Rolled: " + Pl1_diceRoll);
 
+                int Pl1_option = random.Next(0, 3);
+                switch (Pl1_option)
+                {
+                    case 0: // No Play
+                        Console.WriteLine("No Play");
+                        break;
+                    case 1: // Ladder
+                        Pl1_position += Pl1_diceRoll;
+                        Console.WriteLine("Ladder!");
+                        break;
+                    case 2: // Snake
+                        Pl1_position -= Pl1_diceRoll;
+                        Console.WriteLine("Snake!!");
+                        break;
+                }
+
+                if (Pl1_position < 0)
+                { Pl1_position = 0; }
+
+                Console.WriteLine("The position for Player 1 is : " + Pl1_position);
             }
-            Console.WriteLine("The position for Player 1 is : " + Pl1_position);
             Console.ReadLine();
         }
-        }
-
     }
+}
 
 
