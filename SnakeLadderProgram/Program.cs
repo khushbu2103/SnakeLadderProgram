@@ -50,10 +50,11 @@ namespace SnakeLadderProgram
                 { Pl1_position = 100; }
 
                 Console.WriteLine("The position for Player 1 is : " + Pl1_position);
-                if (Pl1_position == 100)
-                {
-                    Console.WriteLine("The Player 1 Has Won");
-                }
+               
+            }
+            if (Pl1_position == 100)
+            {
+                Console.WriteLine("The Player 1 Has Won, aftertotal: " +Pl1_numberOfRolls + " rolls");
             }
             Console.ReadLine();
         }
